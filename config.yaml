@@ -1,2 +1,3 @@
 Ingest_Data:
   data_folder: "data"
+  dataset_name: "prasunroy/natural-images"

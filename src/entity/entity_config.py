@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-@dataclass(frozenset = True)
-class ConfigDatIngest:
+@dataclass(frozen = True)
+class ConfigDataIngest:
     data_folder : Path
-
+    dataset_name: str
