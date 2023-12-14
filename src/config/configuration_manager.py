@@ -1,5 +1,6 @@
 from __init__  import config_path, params_path
-from src.entity.entity_config import ConfigDataIngest
+from src.entity.entity_config import (ConfigDataIngest, 
+                                      ConfigPreprocess)
 from src.utils. common import read_yaml
 
 class ConfigurationManager:
@@ -24,3 +25,17 @@ class ConfigurationManager:
         )
 
         return data_ingest_config
+    
+    def get_preprocess_config(self)->ConfigPreprocess:
+        """
+        method is used to get the configuration for the 
+        "image preprocessing stage" : second stage in the ML pipeline 
+        """
+        preprocess_config = ConfigPreprocess(
+            data_folder=self.config.Preprocess, 
+            Augmentation= self.params.Augmentation,
+            Image_Size= self.params.Image_Size
+        )
+
+        return preprocess_config
+

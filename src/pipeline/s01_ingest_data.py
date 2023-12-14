@@ -8,7 +8,7 @@ class IngestDataPipeline:
         cm_ingest_data = ConfigurationManager()
         ingest_data_conf = cm_ingest_data.get_ingest_data_config()
         ingest_data_compo = IngestDataComponent(ingest_data_conf)
-        ingest_data_compo.downlaod_data_from_source()
+        ingest_data_compo.download_data_from_source()
 
         
 

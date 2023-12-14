@@ -1,3 +1,6 @@
 Ingest_Data:
   data_folder: "data"
   dataset_name: "prasunroy/natural-images"
+
+Preprocess:
+  data_folder: "data/data/natural_images" # dataset path for preprocessing

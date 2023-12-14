@@ -5,3 +5,9 @@ from pathlib import Path
 class ConfigDataIngest:
     data_folder : Path
     dataset_name: str
+
+@dataclass(frozen = True)
+class ConfigPreprocess():
+    data_folder : Path
+    Augmentation: bool
+    Image_Size: int

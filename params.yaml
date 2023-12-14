@@ -1,1 +1,3 @@
-key: value
+Augmentation: True
+Image_Size: [224,224]
+Epochs: 100

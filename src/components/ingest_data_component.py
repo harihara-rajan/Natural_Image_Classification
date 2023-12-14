@@ -7,7 +7,7 @@ class IngestDataComponent:
     def __init__(self, config_data_ingest) -> None:
         self.config = config_data_ingest
     
-    def downlaod_data_from_source(self):
+    def download_data_from_source(self):
         """
         method uses kaggle library to download the data from 
         url and save it to the data_folder path mentioned in
