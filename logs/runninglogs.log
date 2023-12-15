@@ -1,2 +1,4 @@
-[2023-12-14 20:56:37,925] : INFO : main : Data Ingestion Started]
-[2023-12-14 20:57:04,119] : INFO : main : Data Ingestion Ended]
+[2023-12-15 01:09:24,880] : INFO : main : Data Ingestion Started]
+[2023-12-15 01:09:43,672] : INFO : main : Data Ingestion Ended]
+[2023-12-15 01:09:43,673] : INFO : main : Preprocessing Pipeline Started]
+[2023-12-15 01:09:43,755] : INFO : main : Preprocessing Pipeline Ended]

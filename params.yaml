@@ -1,3 +1,5 @@
 Augmentation: True
 Image_Size: [224,224]
 Epochs: 100
+Rotation: 180
+Batch_Size: 32

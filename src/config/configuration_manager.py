@@ -32,10 +32,11 @@ class ConfigurationManager:
         "image preprocessing stage" : second stage in the ML pipeline 
         """
         preprocess_config = ConfigPreprocess(
-            data_folder=self.config.Preprocess, 
+            data_folder=self.config.Preprocess.data_folder, 
             Augmentation= self.params.Augmentation,
-            Image_Size= self.params.Image_Size
+            Image_Size= self.params.Image_Size, 
+            Rotation= self.params.Rotation, 
+            Batch_Size= self.params.Batch_Size,
         )
 
         return preprocess_config
-

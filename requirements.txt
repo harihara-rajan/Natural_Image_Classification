@@ -1,4 +1,8 @@
+kaggle
 torch
+torchvision
 scikit-learn
 matplotlib
 seaborn
+pyyaml
+python-box

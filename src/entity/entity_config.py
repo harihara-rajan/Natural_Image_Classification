@@ -11,3 +11,5 @@ class ConfigPreprocess():
     data_folder : Path
     Augmentation: bool
     Image_Size: int
+    Rotation: int
+    Batch_Size: int
