@@ -1,6 +1,19 @@
 Ingest_Data:
-  data_folder: "data"
+  data_folder: "artifacts/data"
   dataset_name: "prasunroy/natural-images"
 
-Preprocess:
-  data_folder: "data/data/natural_images" # dataset path for preprocessing
+base_model_generator:
+  base_model_path: artifacts/base_model/base_model.h5
+  actual_model_path: artifacts/final_model/final_model.h5
+
+prepare_callbacks:
+  root_dir: artifacts/prepare_callbacks
+  tensorboard_log_dir:  artifacts/prepare_callbacks/tensorboard_log_dir
+  checkpoint_file_path: artifacts/prepare_callbacks/checkpoint_dir/model.h5
+
+training:
+  root_dir: artifacts/training
+  trained_model_path: artifacts/training/trained_model.h5
+  training_data_path: artifacts/data/data/natural_images
+
+# no config for model evaluation

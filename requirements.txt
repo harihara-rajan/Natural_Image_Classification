@@ -1,6 +1,5 @@
 kaggle
-torch
-torchvision
+tensorflow
 scikit-learn
 matplotlib
 seaborn

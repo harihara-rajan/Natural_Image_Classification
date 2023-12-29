@@ -1,5 +1,8 @@
-Augmentation: True
-Image_Size: [224,224]
-Epochs: 100
-Rotation: 180
-Batch_Size: 32
+EPOCHS: 15
+CLASSES: 8
+IMAGE_SIZE: [224,224,3]
+TEST_SIZE: 0.2
+BATCH_SIZE: 16
+LR: 0.005
+AUG: True
+MODEL: 2
