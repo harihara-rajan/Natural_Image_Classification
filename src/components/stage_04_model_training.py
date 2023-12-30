@@ -3,6 +3,46 @@ import tensorflow as tf
 import os
 import pandas as pd 
 class TrainingComponent():
+    """
+    TrainingComponent is a class designed to streamline the process of training and evaluating a deep learning model
+    using TensorFlow and Keras. It includes functionalities for loading a pre-trained model, performing a train-test split,
+    and training the model with specified callbacks.
+
+    Attributes:
+        config (TrainingEntity): An instance of TrainingEntity containing configuration parameters for training.
+        model (tf.keras.models.Model): The neural network model to be trained and evaluated.
+        train_generator (tf.keras.preprocessing.image.DirectoryIterator): Generator for training data.
+        valid_generator (tf.keras.preprocessing.image.DirectoryIterator): Generator for validation data.
+        steps_per_epochs (int): Number of steps per training epoch.
+        validation_steps (int): Number of steps per validation epoch.
+
+    Methods:
+        __init__(self, TrainingEntity): Constructor method to initialize the TrainingComponent with a TrainingEntity.
+        test_train_split(self): Splits the data into training and validation sets and prepares data generators.
+        train(self, callback_list): Trains the model using the specified callbacks and saves the trained model.
+
+    Example Usage:
+        # Instantiate TrainingEntity with necessary configuration parameters
+        training_config = TrainingEntity(root_dir='path/to/root',
+                                        trained_model_path='path/to/trained/model.h5',
+                                        actual_model_path='path/to/actual/model.h5',
+                                        training_data_path='path/to/training/data',
+                                        params_image_size=(224, 224, 3),
+                                        params_batch_size=32,
+                                        params_is_augment=True,
+                                        params_epochs=10,
+                                        model_no=1)
+
+        # Instantiate TrainingComponent with the TrainingEntity
+        trainer = TrainingComponent(training_config)
+
+        # Split data and prepare generators
+        trainer.test_train_split()
+
+        # Train the model with specified callbacks
+        trainer.train(callback_list=[...])
+    """
+    
     def __init__(self, TrainingEntity):
         self.config = TrainingEntity
         create_dirs([self.config.root_dir, os.path.dirname(self.config.trained_model_path)])

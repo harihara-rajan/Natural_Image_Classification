@@ -5,6 +5,39 @@ from pathlib import Path
 from src.utils.common import save_json, create_dirs
 
 class ModelEvaluation:
+    """
+    ModelEvaluation is a class designed for evaluating a trained deep learning model using TensorFlow and Keras.
+    It includes functionalities for loading a trained model, preparing a validation data generator, and conducting
+    evaluation. The evaluation results are then saved as a JSON file.
+
+    Attributes:
+        config (ModelEvaluationEntity): An instance of ModelEvaluationEntity containing configuration parameters.
+        valid_data_generator (tf.keras.preprocessing.image.DirectoryIterator): Generator for validation data.
+        score (list): Evaluation scores, typically containing loss and accuracy.
+
+    Methods:
+        __init__(self, ModelEvaluationEntity): Constructor method to initialize the ModelEvaluation with a ModelEvaluationEntity.
+        _valid_generator(self): Prepares the validation data generator based on the provided configuration.
+        evaluation(self): Evaluates the trained model using the validation data generator.
+        save_score(self): Saves the evaluation scores as a JSON file.
+
+    Example Usage:
+        # Instantiate ModelEvaluationEntity with necessary configuration parameters
+        evaluation_config = ModelEvaluationEntity(
+            trained_model_path='path/to/trained/model.h5',
+            training_data_path='path/to/training/data',
+            params_image_size=(224, 224, 3),
+            params_batch_size=32,
+            model_no=1
+        )
+
+        # Instantiate ModelEvaluation with the ModelEvaluationEntity
+        evaluator = ModelEvaluation(evaluation_config)
+
+        # Evaluate the model and save the scores
+        evaluator.evaluation()
+        evaluator.save_score()
+    """
     def __init__(self, ModelEvaluationEntity):
         self.config = ModelEvaluationEntity
     
