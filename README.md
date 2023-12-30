@@ -99,3 +99,37 @@ data_ingest:
   dataset_name: "prasunroy/natural-images"
   data_folder: "path/to/data/folder"
 ```
+In this example, the dataset_name is set to "prasunroy/natural-images." You can replace this value with the specific name of the dataset you want to work with. </br>
+In the `params.yaml` file, you have the flexibility to customize and set various parameters that influence the behavior of your machine learning pipeline. Below are the key parameters along with their descriptions:
+
+#### 1. `EPOCHS`: 
+   - **Description:** The number of training epochs, representing the number of times the model will iterate over the entire training dataset.
+   - **Example:** `15`
+
+#### 2. `CLASSES`:
+   - **Description:** The number of classes or categories in the dataset. This value is dataset-specific and depends on the nature of the classification task.
+   - **Example:** `8`
+
+#### 3. `IMAGE_SIZE`:
+   - **Description:** The dimensions of input images expected by the model. It is specified as a list with three elements representing width, height, and the number of channels (e.g., `[224, 224, 3]`).
+   - **Example:** `[224, 224, 3]`
+
+#### 4. `TEST_SIZE`:
+   - **Description:** The proportion of the dataset to include in the test split. It is a value between 0 and 1.
+   - **Example:** `0.2`
+
+#### 5. `BATCH_SIZE`:
+   - **Description:** The number of samples in each batch during training. It impacts the speed and memory usage during training.
+   - **Example:** `16`
+
+#### 6. `LR`:
+   - **Description:** The learning rate, which controls the step size during optimization. It influences the convergence and training speed.
+   - **Example:** `0.005`
+
+#### 7. `AUG`:
+   - **Description:** A boolean indicating whether data augmentation is enabled (`True`) or disabled (`False`). Data augmentation involves applying random transformations to training data, enhancing model generalization.
+   - **Example:** `True`
+
+#### 8. `MODEL`:
+   - **Description:** An identifier or version number for the model. It helps track and distinguish different versions of the trained models.
+   - **Example:** `2`
