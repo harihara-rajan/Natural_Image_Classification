@@ -59,7 +59,7 @@ The script imports several pipeline components and the logging module.
 
 Logging is used to record information about the script's execution. It starts by logging the beginning of the "Data Ingestion" stage.
 
-## Data Ingestion Stage (Stage 02):
+## Data Ingestion Stage (Stage 01):
 
 - The `IngestDataPipeline` class is instantiated, and its `main` method is called to execute the data ingestion stage.
 - Logging records the completion of the "Data Ingestion" stage. `IngestDataPipeline` calls `IngestDataComponent` class
