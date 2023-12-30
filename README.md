@@ -48,3 +48,36 @@ The required libraries for this project are specified in the requirements.txt fi
 pip install -r requirements.txt
 ```
 This command reads the requirements.txt file and installs the specified libraries and their corresponding versions. Ensure that you have Python and pip installed on your system before running this command.
+
+# Main Script Overview
+
+## Import Statements:
+
+The script imports several pipeline components and the logging module.
+
+## Logging Initialization:
+
+Logging is used to record information about the script's execution. It starts by logging the beginning of the "Data Ingestion" stage.
+
+## Data Ingestion Stage:
+
+- The `IngestDataPipeline` class is instantiated, and its `main` method is called to execute the data ingestion stage.
+- Logging records the completion of the "Data Ingestion" stage.
+
+## Base Model Generator Stage (Stage 02):
+
+- The script contains a try-except block to handle exceptions during the execution of the "Base Model Generator" stage (`BaseModelPipeline`).
+- If successful, it prints messages indicating the start and end of the stage.
+- Any exceptions raised during this stage are re-raised.
+
+## Model Training Stage (Stage 03):
+
+- Another try-except block is used to handle exceptions during the execution of the "Model Training" stage (`ModelTrainingPipeline`).
+- If successful, it prints messages indicating the start and end of the stage.
+- Any exceptions raised during this stage are re-raised.
+
+## Model Evaluation Stage (Stage 04):
+
+- Another try-except block is used to handle exceptions during the execution of the "Model Evaluation" stage (`ModelEvaluationPipeline`).
+- If successful, it prints messages indicating the start and end of the stage.
+- Any exceptions raised during this stage are re-raised.
