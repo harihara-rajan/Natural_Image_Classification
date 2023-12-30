@@ -133,3 +133,46 @@ In the `params.yaml` file, you have the flexibility to customize and set various
 #### 8. `MODEL`:
    - **Description:** An identifier or version number for the model. It helps track and distinguish different versions of the trained models.
    - **Example:** `2`
+
+Once you have configured the necessary parameters and dataset details in the `config.yaml` and `params.yaml` files, you can proceed to train the convolutional model using the provided `main.py` script. This script orchestrates the entire training process and saves important artifacts for further analysis.
+
+1. **Edit Configuration Files:**
+
+   Before running the training script, make sure to edit the `config.yaml` and `params.yaml` files to specify dataset details, model configuration, and training parameters.
+
+2. **Run the Training Script:**
+
+   Execute the `main.py` script to initiate the training process. Open a terminal and navigate to the project directory:
+
+   ```python
+   python main.py
+   ```
+
+### Training Process:
+
+The script will start training the convolutional model based on the provided configurations. It includes the following steps:
+
+1. Data Ingestion
+2. Base Model Generation
+3. Model Training
+4. Model Evaluation
+
+### Artifacts:
+
+After the training completes, relevant artifacts are saved in the `artifacts` folder within the project directory. These artifacts include:
+
+- **Training History CSV:**
+  - *Path:* `artifacts/history_csv/epoch_his_{model_version}.csv`
+  - Contains training and validation metrics across epochs.
+
+- **Trained Model File (HDF5 format):**
+  - *Path:* `artifacts/trained_model/trained_model_{model_version}.h5`
+  - The trained convolutional model saved in HDF5 format.
+
+- **Training Scores JSON:**
+  - *Path:* `artifacts/scores/training_score_{model_version}.json`
+  - Contains training scores, including loss and accuracy.
+
+- **TensorBoard Logs:**
+  - *Path:* `artifacts/tb_logs/tb_logs_at{timestamp}`
+  - Logs for TensorBoard visualization.
