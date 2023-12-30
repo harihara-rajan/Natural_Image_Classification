@@ -59,25 +59,30 @@ The script imports several pipeline components and the logging module.
 
 Logging is used to record information about the script's execution. It starts by logging the beginning of the "Data Ingestion" stage.
 
-## Data Ingestion Stage:
+## Data Ingestion Stage (Stage 02):
 
 - The `IngestDataPipeline` class is instantiated, and its `main` method is called to execute the data ingestion stage.
-- Logging records the completion of the "Data Ingestion" stage.
+- Logging records the completion of the "Data Ingestion" stage. `IngestDataPipeline` calls `IngestDataComponent` class
+- The `IngestDataComponent` class is a fundamental component designed for the data ingestion stage in a machine learning pipeline. This class facilitates the downloading and extraction of data from a specified source, with a focus on utilizing the Kaggle API for this purpose.
 
 ## Base Model Generator Stage (Stage 02):
 
-- The script contains a try-except block to handle exceptions during the execution of the "Base Model Generator" stage (`BaseModelPipeline`).
+- The script contains a try-except block to handle exceptions during the execution of the "Base Model Generator" stage (`BaseModelPipeline`). `BaseModelPipeline` calls `BaseModelGeneratorComponent` class
+- `BaseModelGeneratorComponent` is a class designed for generating base and actual deep learning models using TensorFlow and Keras. It includes functionalities for loading a pre-trained base model, modifying it to create an actual model with customizable configurations, and saving the models. 
 - If successful, it prints messages indicating the start and end of the stage.
 - Any exceptions raised during this stage are re-raised.
 
 ## Model Training Stage (Stage 03):
 
-- Another try-except block is used to handle exceptions during the execution of the "Model Training" stage (`ModelTrainingPipeline`).
+- Another try-except block is used to handle exceptions during the execution of the "Model Training" stage (`ModelTrainingPipeline`). `ModelTrainingPipeline` calls `TrainingComponent` class
+- `TrainingComponent` is a class designed to streamline the process of training and evaluating a deep learning model using TensorFlow and Keras. It includes functionalities for loading a pre-trained model, performing a train-test split, and training the model with specified callbacks. 
 - If successful, it prints messages indicating the start and end of the stage.
 - Any exceptions raised during this stage are re-raised.
 
 ## Model Evaluation Stage (Stage 04):
 
-- Another try-except block is used to handle exceptions during the execution of the "Model Evaluation" stage (`ModelEvaluationPipeline`).
+- Another try-except block is used to handle exceptions during the execution of the "Model Evaluation" stage (`ModelEvaluationPipeline`). `ModelEvaluationPipeline` calls `ModelEvaluation`
+- `ModelEvaluation` is a class designed for evaluating a trained deep learning model using TensorFlow and Keras. It includes functionalities for loading a trained model, preparing a validation data generator, and conducting
+    evaluation. The evaluation results are then saved as a JSON file.
 - If successful, it prints messages indicating the start and end of the stage.
 - Any exceptions raised during this stage are re-raised.
