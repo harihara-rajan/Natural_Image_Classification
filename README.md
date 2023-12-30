@@ -86,3 +86,16 @@ Logging is used to record information about the script's execution. It starts by
     evaluation. The evaluation results are then saved as a JSON file.
 - If successful, it prints messages indicating the start and end of the stage.
 - Any exceptions raised during this stage are re-raised.
+
+## How to train a convolutional model
+In the config.yaml file, you have the flexibility to specify the name of the dataset that you wish to download. The dataset_name parameter plays a crucial role in defining the target dataset for your machine learning pipeline.</br>
+
+Configuration Example: </br>
+In the config.yaml file, you can set the dataset_name parameter to the desired dataset name. For instance:</br>
+
+Example config.yaml
+```python
+data_ingest:
+  dataset_name: "prasunroy/natural-images"
+  data_folder: "path/to/data/folder"
+```
